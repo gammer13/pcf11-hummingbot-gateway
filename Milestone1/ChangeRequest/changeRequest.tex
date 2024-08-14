@@ -1,0 +1,175 @@
+\documentclass{article}
+
+\usepackage{charter} % Use the Charter font
+\usepackage[
+    a4paper,    % Paper size
+    top=0.8in,    % Top margin adjusted to give more space for the header
+    bottom=0.2in, % Bottom margin
+    left=1in,   % Left margin
+    right=1in,  % Right margin
+]{geometry}
+\usepackage{color,soul}
+
+\setlength{\parindent}{0pt}     % Paragraph indentation 
+\setlength{\parskip}{1em}       % Vertical space between paragraphs
+
+\usepackage{graphicx}       % Required for including images
+\usepackage{fancyhdr}       % Required for customizing headers and footers
+
+\fancypagestyle{firstpage}{%
+    \fancyhf{} % Clear default headers/footers
+    \renewcommand{\headrulewidth}{0pt} % No header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+    \fancyhead[L]{%
+        \includegraphics[height=1.5cm]{hummingbot_logo.png}\hspace{1cm} % Smaller logo size and horizontal space
+    }
+    \fancyhead[R]{\includegraphics[height=1.5cm]{catalyst_logo.png}}
+}
+\fancypagestyle{subsequentpages}{%
+    \fancyhf{} % Clear default headers/footers
+    \renewcommand{\headrulewidth}{0pt} % No header rule
+    \renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use the first page headers/footers style on the first page
+\pagestyle{subsequentpages} % Use the subsequent pages headers/footers style on subsequent pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\bigskip\bigskip
+\textbf{Open Source Integration of Hummingbot with Cardano for Enhanced DeFi Liquidity} 
+
+\vspace{-1em} % Pull the rule closer to the logo
+\rule{\linewidth}{1pt} % Horizontal rule
+
+
+\begin{flushright}
+    \begin{tabular}{l @{}}
+        Date: \today\\ % Date
+        Name: Shay Gammer \\
+        Phone: +41 79 863 0977\\
+        Email: shay.gammer@gmail.com\\
+        \\
+    \end{tabular}
+\end{flushright}
+
+\textbf{To: The Catalyst Team} \\
+    
+\textbf{Subject: Change Request - Project ID: 1100212} \\
+
+Dear Catalyst Team,
+
+ % Vertical whitespace
+
+I am writing to submit a Change Request for project ID 1100212 titled "Open Source Integration of Hummingbot with Cardano for Enhanced DeFi Liquidity". \
+ Due to significant findings during our initial research phase, we request a modification of our deliverables.
+
+We initially planned to implement two Hummingbot gateway connectors; one for a spot Decentralized Exchange (DEX) and a second for a perpetual DEX on the Cardano network.\
+Upon comprehensive research, we discovered the absence of any operational perpetual DEX platforms on Cardano. Moreover, following multiple discussions with players in the ecosystem, \
+There apears to be no such DEX close to roleout. Consequently, we propose to replace the perpetual DEX integration with an additional spot DEX integration.
+
+The primary aim of our project is to enhance DeFi liquidity on Cardano through effective integration with Hummingbot. The idea of delivering integration with two materialy \
+different DEXs is meant to provide two diverse examples of integrations to facilitate future integrations. The absence of a perpetual DEX on Cardano renders our original \
+deliverable unachievable within the current scope. Pivoting to another spot DEX integration will maintain the project's goal by diversifying the liquidity options available \
+through different spot trading platforms and, as also discovered through our research, provide two materialy different implementation examples.
+
+Changes to Approved Deliverables:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|p{6cm}|p{6cm}|}
+    \hline
+    \textbf{Milestone} & \textbf{Before} & \textbf{After} \\
+    \hline
+    First Milestone & Selection of one spot DEX and one perpetual DEX & Selection of two Spot DEXs to be integrated \\
+    \hline
+    Fourth Milestone & Implementation of integration with a perpetual DEX & Implementation of integration with a second spot DEX \\
+    \hline
+    Fifth Milestones & Testing and Refinement of integration with a perpetual DEX & Testing and Refinement of integration with a second spot DEX \\
+    \hline
+    \end{tabular}
+    \caption{Description of Deliverable Changes}
+    \label{tab:deliverable_changes}
+\end{table}
+    
+This change will not have any financial consequnces nor will it adversely impact our ability to complete the project as per the original proposal. Instead, it aligns our deliverables more closely with the available \
+technology on Cardano, ensuring that the project remains feasible and relevant.
+
+Thank you for considering this change request. We look forward to your positive response and guidance on the next steps.
+
+\bigskip % Vertical whitespace
+
+Shay Gammer \\
+Project Lead\\
+
+\pagebreak
+\section*{Requested Modifications to Effected Milestones}
+\subsection*{Milestone 1 - Hummingbot-Cardano Gateway Design \& Specification}
+
+\begin{enumerate}
+    \item Milestone Outputs
+    \begin{itemize}
+        \item A milestone report containing two sections - 
+        \begin{itemize}
+            \item A short analysis of the Cardano DEX ecosystem leading to a selection of \st{one spot DEX and one perpetual DEX} \hl{two spot DEXs} to be integrated in the following milestones
+            \item A detailed project plan for the following milestones given DEXs selected for implementation
+        \end{itemize}        
+        \item  A template configuration file with identified integration parameters
+    \end{itemize}    
+
+    \item Acceptance Criteria
+    \begin{itemize}
+        \item The milestone report should - \begin{itemize}
+            \item Cover the major DEXs currently on Cardano 
+            \item Identify \st{one spot DEX and one perpetual DEX} \hl{two DEXs} for integration
+            \item Provide a specific project plan for the following milestones, given the selected DEXs
+        \end{itemize}        
+        \item  The template configuration file should list all integration parameters that are specific to the selected DEX 
+    \end{itemize}
+    
+    \item Evidence of milestone completion - Unchanged
+\end{enumerate}
+
+
+\subsection*{Milestone 4 - Development of Hummingbot Connector for \st{Perpetual Futures} \hl{a second} DEX}
+
+\begin{enumerate}
+    \item Milestone Outputs
+    \begin{itemize}
+        \item Initial codebase for the \hl{second} Hummingbot-Cardano \st{perpetual} DEX connector 
+        \item Configuration documentation and integration guidelines for the \st{perpetual} connector
+        \item Unit Tests for the connector
+    \end{itemize}    
+
+    \item Acceptance Criteria
+    
+    \begin{itemize}
+        \item The provided implementation will demonstrate programmatic interaction with the \st{perpetual} DEX to achieve the following (unit tests) - \begin{itemize}
+            \item Read price 
+            \item Place an Order
+            \item Amend / Cancel Order (if applicable)
+            \item provide / remove liquidity (if applicable)
+        \end{itemize}        
+    \end{itemize}
+    
+    \item Evidence of milestone completion - Unchanged
+\end{enumerate}
+
+\subsection*{Milestone 5 - Testing and Refinement - Hummingbot Connector for \st{Perpetual Futures} \hl{the second} DEX}
+
+\begin{enumerate}
+    \item Milestone Outputs
+    \begin{itemize}
+        \item Integration test report highlighting the functionality and identified issues of the \st{perpetual} \hl{second} DEX connector 
+        \item Regression tests on Refined codebase after addressing issues and improving performance
+        \item Updated codebase and documentation
+    \end{itemize}    
+
+    \item Acceptance Criteria - Unchanged
+    
+    \item Evidence of milestone completion - Unchanged
+\end{enumerate}
+
+
+\end{document}
